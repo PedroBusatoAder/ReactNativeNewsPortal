@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+// https://api.nytimes.com/svc/books/v3 --> URL to our api
+
+// Import own components
+import TabNavigation from './src/navigation/TabNavigation/TabNavigation'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <TabNavigation/>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+//Colorss
+//050505
+//1B9AAA
+//DDDBCB
+//F5F1E3
+//FFFFFF
