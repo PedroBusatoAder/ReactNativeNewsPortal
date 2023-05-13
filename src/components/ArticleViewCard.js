@@ -5,6 +5,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 function ArticleView(props){
+    console.log(props.articleInfo)
     return(
         <View style={styles.newsContainer}>
             <Image

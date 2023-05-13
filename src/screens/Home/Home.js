@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import { Text, FlatList, View, StyleSheet } from "react-native";
 
 //  -- Import our own components --  //
-import ArticleViewCard from "../../components/ArticleViewCard";
 import ArticleContainer from "../../components/ArticleContainer";
 
 
@@ -17,7 +16,7 @@ class Home extends Component{
     }
     
     componentDidMount(){
-        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.state.apiKey}`)
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.state.apiKey}`) // Top headlines for the country the user chooses
             .then( response => {
                 return response.json()
             })
@@ -38,19 +37,7 @@ class Home extends Component{
     render(){
         return(
             <View style={styles.background}>
-                <View style={styles.localNewsContainer}>
-                    <Text> Don't skip the lastest headlines from your country </Text>
-                    <FlatList
-                        data={this.state.apiData}
-                        keyExtractor={(article, index) => {
-                            return index.toString()
-                        }}
-                        renderItem={ (article) => {
-                            return <ArticleViewCard articleInfo = {article} />}
-                        }
-                        horizontal='true'
-                    />    
-                </View> 
+                <ArticleContainer articles={this.state.apiData}></ArticleContainer> 
             </View>
             
         )
@@ -58,11 +45,8 @@ class Home extends Component{
 }
 
 const styles = StyleSheet.create({
-    localNewsContainer: {
-        backgroundColor: '#F7F3E3',
-        margin: 5,
 
-    }
+
 })
 
 
