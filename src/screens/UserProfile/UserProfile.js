@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import { View } from "react-native";
 
+// -- We import our own components -- //
+import ProfileInformation from "../../components/ProfileInformation";
 
 class UserProfile extends Component {
     constructor(props){
@@ -12,7 +14,7 @@ class UserProfile extends Component {
     render(){
         return(
             <View>
-
+                <ProfileInformation></ProfileInformation>
             </View>
         )
     }

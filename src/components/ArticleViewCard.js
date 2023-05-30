@@ -4,8 +4,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 // -- Import Icons -- //
 import { Feather } from "@expo/vector-icons";
 
-function ArticleView(props){
-    console.log(props.articleInfo)
+function ArticleViewCard(props){
     return(
         <View style={styles.newsContainer}>
             <Image
@@ -58,4 +57,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ArticleView;
+export default ArticleViewCard;

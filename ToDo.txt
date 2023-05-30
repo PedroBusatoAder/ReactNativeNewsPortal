@@ -1,0 +1,5 @@
+Agregar un menu scrolleable con las categorias que marco el usuario como favoritas
+Sera un Flatlist horizontal que devuelva touchableOpacities
+Cuando se presiona cada boton se cambiara el estado del home y se hara el fetch en base a la categoria seleccionada
+Asi el fetch trae la info de la categoria y se mostrara en pantalla ya que se updatea el estado
+

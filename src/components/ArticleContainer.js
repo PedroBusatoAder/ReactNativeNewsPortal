@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     localNewsContainer: {
         backgroundColor: '#F7F3E3',
         margin: 5,
-
     }
 })
 export default ArticleContainer;

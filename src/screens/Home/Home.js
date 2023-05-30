@@ -1,8 +1,10 @@
 import React, {Component} from "react";
-import { Text, FlatList, View, StyleSheet } from "react-native";
+import { Text, FlatList, View, ScrollView,StyleSheet } from "react-native";
 
 //  -- Import our own components --  //
 import ArticleContainer from "../../components/ArticleContainer";
+import ArticleContainerColumn from "../../components/ArticleContainerColumn";
+import Categories from "../../components/Categories";
 
 
 class Home extends Component{
@@ -10,7 +12,7 @@ class Home extends Component{
         super(props);
         this.state = {
             apiKey: '99b09d9389f14ee59af56079f6655492',
-            apiData: '',
+            apiDataByCountry: '',
             isLoading: true
         }
     }
@@ -23,7 +25,7 @@ class Home extends Component{
             .then(data => {
                 console.log(data)
                 this.setState({
-                    apiData: data.articles,
+                    apiDataByCountry: data.articles,
                     isLoading: false
                 })
                 
@@ -36,17 +38,35 @@ class Home extends Component{
     
     render(){
         return(
-            <View style={styles.background}>
-                <ArticleContainer articles={this.state.apiData}></ArticleContainer> 
-            </View>
-            
+            <ScrollView style={styles.homeScreen}>         
+                <Categories></Categories>                                         
+                <ArticleContainer articles={this.state.apiDataByCountry}></ArticleContainer> 
+
+                <Text> Based on your personal choice </Text>
+                <ArticleContainerColumn>
+                </ArticleContainerColumn>
+
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+                <Text>hoLA</Text>
+            </ScrollView>            
         )
     }
 }
 
 const styles = StyleSheet.create({
-
-
+    homeScreen: {
+        flex: 1,
+    }
 })
 
 
