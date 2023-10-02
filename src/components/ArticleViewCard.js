@@ -26,21 +26,21 @@ function ArticleViewCard(props){
 const styles = StyleSheet.create({
     newsContainer: {
         position: 'relative',
-        height: 400,
-        width: 280,
+        height: 300,
+        width: 370,
         borderRadius: '4%',
         margin: 10,
         padding: 0
     },
     titleArticle: {
         position: 'absolute',
-        top: 230,
+        top: 170,
         fontFamily: 'Verdana',
         fontSize: 20,
         color: 'white',
         padding: 10,
         textAlign: 'justify',
-        backgroundColor: 'rgba(0,0,0,0.3)'
+        backgroundColor: 'rgba(0,0,0,0.3)',
     },
     imageArticle:{
         height: '100%',

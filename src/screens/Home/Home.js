@@ -25,7 +25,7 @@ class Home extends Component{
             .then(data => {
                 console.log(data)
                 this.setState({
-                    apiDataByCountry: data.articles,
+                    apiDataByCountry: data.articles.slice(0,5),
                     isLoading: false
                 })
                 
@@ -42,22 +42,8 @@ class Home extends Component{
                 <Categories></Categories>                                         
                 <ArticleContainer articles={this.state.apiDataByCountry}></ArticleContainer> 
 
-                <Text> Based on your personal choice </Text>
-                <ArticleContainerColumn>
-                </ArticleContainerColumn>
-
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
-                <Text>hoLA</Text>
+                <Text style={styles.headingVerticalNews}> Your own personal choice </Text>
+                <ArticleContainerColumn/>
             </ScrollView>            
         )
     }
@@ -66,6 +52,10 @@ class Home extends Component{
 const styles = StyleSheet.create({
     homeScreen: {
         flex: 1,
+    },
+    headingVerticalNews: {
+        fontSize: 20,
+        padding: 5
     }
 })
 

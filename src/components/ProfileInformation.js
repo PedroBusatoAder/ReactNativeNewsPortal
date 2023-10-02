@@ -1,15 +1,18 @@
-//Thinking that each of the buttons in Account and App settings can be turned into a component themselves
+//Estoy teniendo problemas con la altura del componente de debajo ya que no se ajusta para contener a todos los botones
 
 import React from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+
+// -- Import our own components -- //
+import SettingsButton from "./SettingsButton";
 
 // -- Import Icons -- //
 import { Entypo, AntDesign } from '@expo/vector-icons';
 
 function ProfileInformation(){
     return(
-        <View>
-            
+        <View style={styles.screen}>
+
             <View style={styles.profileTopContainer}>
                 <Image
                     style={styles.profileBackground}
@@ -39,24 +42,15 @@ function ProfileInformation(){
 
                 <View style={styles.accountSettings}>
                     <Text style={styles.settingText}>Account Settings</Text>
-                    <View style={styles.settingButton}>
-                        <AntDesign name="user" size={24} color="orange" />
-                        <TouchableOpacity>
-                            <Text>Your Profile</Text>                                   
-                        </TouchableOpacity>
-                        <Entypo name="chevron-right" size={24} color="black" />
-                    </View>
+                    <SettingsButton icon='user' title='Your Profile'/>
                 </View>
                 
                 <View style={styles.appSettings}>
                     <Text style={styles.settingText}>App Settings</Text>
-                    <View style={styles.settingButton}>
-                        <AntDesign name="user" size={24} color="orange" />
-                        <TouchableOpacity>
-                            <Text>Your Profile</Text>                                   
-                        </TouchableOpacity>
-                        <Entypo name="chevron-right" size={24} color="black" />
-                    </View>
+                    <SettingsButton icon='user' title='Dark Mode'/>
+                    <SettingsButton icon='user' title='Change Language'/>
+                    <SettingsButton icon='user' title='Change Password'/>
+                    <SettingsButton icon='user' title='Help'/>
                 </View>
             </View>
         
@@ -65,6 +59,9 @@ function ProfileInformation(){
 }
 
 const styles = StyleSheet.create({
+    screen: {
+        height: 1000 //Me exigio agregar una altura al contentedor que contiene todo el contenido de la screen dentro --> No funciono con 100%
+    },
     profileTopContainer: {
         display: 'flex',
         flexDirection: 'column',
@@ -123,6 +120,7 @@ const styles = StyleSheet.create({
         paddingTop: 40,
         paddingLeft: 20,
         paddingRight: 20,
+        height: '100%'
     },
 
     accountSettings: {
@@ -132,19 +130,13 @@ const styles = StyleSheet.create({
 
     appSettings: {
         backgroundColor: 'red',
-        height: 85
+        height: 80,
+        marginTop: 10
     },
 
     settingText: {
         fontSize: 20,
         height: '25%'
-    },
-    settingButton: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        height: '70%'
     }
 })
 

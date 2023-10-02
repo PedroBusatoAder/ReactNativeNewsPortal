@@ -38,8 +38,8 @@ class ArticleContainerColumn extends Component{
         console.log(this.state.apiDataByTheme)
         return(
             <View style={styles.localNewsContainer}>
-                <Text>
-                    Do not miss out on the latest news about {this.state.newsTheme}
+                <Text style={styles.newsTheme}>
+                    News on {this.state.newsTheme}
                 </Text>
                 <FlatList
                     data={this.state.apiDataByTheme}
@@ -50,7 +50,6 @@ class ArticleContainerColumn extends Component{
                         return <ArticleViewCardSmall articleInfo={article}/>
                     
                     }}
-                    numColumns={2}
                 />
             </View>
         )
@@ -59,8 +58,13 @@ class ArticleContainerColumn extends Component{
 
 const styles = StyleSheet.create({
     localNewsContainer: {
-        flex: 1
-    }       
+        flex: 1,
+        backgroundColor: 'red'
+    },
+    newsTheme: {
+        fontSize: 15,
+        padding: 12
+    } 
 })
 
 export default ArticleContainerColumn;

@@ -1,5 +1,10 @@
-Agregar un menu scrolleable con las categorias que marco el usuario como favoritas
-Sera un Flatlist horizontal que devuelva touchableOpacities
-Cuando se presiona cada boton se cambiara el estado del home y se hara el fetch en base a la categoria seleccionada
-Asi el fetch trae la info de la categoria y se mostrara en pantalla ya que se updatea el estado
+Check
+(1) La teoria dice que como TabNavigator es la navegacion hija, no deberia agregar NavigationContainer, pero si no lo hago, no funciona la aplicacion! Por el momento lo dejamos
+(2) Mejorar la posicion de titleArticle en ArticleViewCard --> En caso de tener titulos de noticias mas extensos de lo habitual, se excede del largo de la foto
+
+
+(2) Agregar un menu scrolleable con las categorias que marco el usuario como favoritas
+(3) Sera un Flatlist horizontal que devuelva touchableOpacities
+(4) Cuando se presiona cada boton se cambiara el estado del home y se hara el fetch en base a la categoria seleccionada
+(5) Asi el fetch trae la info de la categoria y se mostrara en pantalla ya que se updatea el estado
 

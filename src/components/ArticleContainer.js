@@ -19,7 +19,7 @@ class ArticleContainer extends Component{
         console.log(this.props.articles)
         return(
             <View style={styles.localNewsContainer}>
-                <Text> Don't skip the lastest headlines from your country </Text>
+                <Text> News Today - (Insert Country) </Text>
                 <FlatList
                     data={this.props.articles}
                     keyExtractor={(article, index) => {
@@ -40,7 +40,6 @@ class ArticleContainer extends Component{
 const styles = StyleSheet.create({
     localNewsContainer: {
         backgroundColor: '#F7F3E3',
-        margin: 5,
     }
 })
 export default ArticleContainer;
